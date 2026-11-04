@@ -1,50 +1,53 @@
-# 收藏夹 · DSH 右侧栏插件
+# Favorites · DSH Right Sidebar Plugin
 
-在 DeepSeek Harness 的右侧边栏中收藏网址、按分类整理，并把网站图标拖到其他分类完成归类。
+[中文说明](docs/README.zh-CN.md)
 
-## 作者信息
+Save URLs in the DeepSeek Harness right sidebar, organize them by category, and drag links between categories to organize them.
 
-- 作者：Jeckun
-- 日期：2026-11-5
-- 协议：MIT（见 [LICENSE](LICENSE)）
+## Author
 
-## 功能
+- Author: Jeckun
+- Date: 2026-11-05
+- License: MIT (see [LICENSE](LICENSE))
 
-- 右侧栏新增「收藏夹」页签，从侧栏的开始页进入；快捷键 `Ctrl+Shift+P`（macOS 为 `Cmd+Shift+P`）。
-- 顶部标题、收藏数量、添加菜单（添加链接 / 新建分类）。
-- 分类可折叠、重命名、删除；删除分类时网址移到「未分类」。
-- 拖动分类行可调整分类顺序，深灰色横线表示放置位置。
-- 网址支持添加、编辑、删除，点击图标在新标签页打开。
-- 网站图标可在分类之间拖放，也可在同一分类内拖动排序；灰色竖线表示放置位置。拖到折叠分类会自动展开。
-- 数据保存在浏览器 `localStorage`（`dsh.favorites.v1`），刷新和重启后保留。
-- 首次使用时自动加入 `DeepSeek Api` → `https://platform.deepseek.com/usage`，放在「未分类」中；不预置任何用户分类。
+## Features
 
-## 目录
+- Adds a "Favorites" tab to the right sidebar's start page; shortcut: `Ctrl+Shift+P` (`Cmd+Shift+P` on macOS).
+- Shows a title, favorite count, and an add menu (add link / create category).
+- Categories can be collapsed, renamed, and deleted; deleting a category moves its links to "Uncategorized".
+- Drag category rows to reorder them; a dark gray horizontal line indicates the drop position.
+- Add, edit, and delete links; click an icon to open its URL in a new tab.
+- Drag link icons between categories or within a category to reorder them; a gray vertical line indicates the insertion point. Collapsed categories expand automatically when a link is dragged onto them.
+- Data is stored in browser `localStorage` (`dsh.favorites.v1`) and persists across refreshes and restarts.
+- On first use, adds `DeepSeek Api` → `https://platform.deepseek.com/usage` to "Uncategorized"; no user categories are pre-created.
+
+## Project structure
 
 ```
 dsh-plugin-favorites/
-├── lib/index.js          Host 空实现（浏览器插件入口由 dsh.client 发现）
-├── lib/client.js         右侧栏页签、界面、拖放和 localStorage 持久化
-├── cordis.patch.yml      作为 bundle 安装时插入 favorites 行
-├── locale/{zh,en}.json   插件列表中的标题和描述
-├── icon.svg              插件图标
-├── LICENSE               MIT 许可证正文
-└── package.json
+├── lib/index.js          Host stub (the browser plugin entry is discovered through dsh.client)
+├── lib/client.js         Sidebar tab, UI, drag-and-drop, and localStorage persistence
+├── cordis.patch.yml      Inserts the favorites row when installed as a bundle
+├── locale/{zh,en}.json   Plugin title and description in the plugin list
+├── icon.svg              Plugin icon
+├── LICENSE               MIT license
+├── README.md             English documentation
+└── docs/README.zh-CN.md  Chinese documentation
 ```
 
-## 安装
+## Installation
 
-本机已安装到：
+Installed locally in:
 
-- `C:\Users\jecku\.dsh\profiles\desktop\package.json` 的 `link:` 依赖
-- `C:\Users\jecku\.dsh\profiles\desktop\cordis.patch.yml` 的 `favorites` 行
+- The `link:` dependency in `C:\Users\jecku\.dsh\profiles\desktop\package.json`
+- The `favorites` row in `C:\Users\jecku\.dsh\profiles\desktop\cordis.patch.yml`
 
-如果当前窗口还没有出现「收藏夹」，刷新一次页面（Ctrl+R）；仍没有则重启 DSH。
+If "Favorites" does not appear in the current window, refresh the page (`Ctrl+R`). If it still does not appear, restart DSH.
 
-## 使用
+## Usage
 
-1. 打开一个会话，展开右侧边栏。
-2. 在开始页点击「收藏夹」。
-3. 点击右上角「添加」→「添加链接」或「新建分类」。
-4. 展开分类后，把网址图标拖到另一个分类即可移动；在同一分类内拖动可调整顺序，灰色竖线表示插入位置。
-5. 按住分类行拖动可调整分类顺序，深灰色横线表示插入位置。
+1. Open a conversation and expand the right sidebar.
+2. Click "Favorites" on the start page.
+3. Click "Add" in the upper-right corner, then choose "Add link" or "Create category".
+4. Expand a category and drag a link icon to another category to move it. Drag within the same category to reorder links; a gray vertical line indicates the insertion point.
+5. Drag a category row to reorder categories; a dark gray horizontal line indicates the drop position.
