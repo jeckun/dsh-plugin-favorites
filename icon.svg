@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Favorites">
+  <defs>
+    <linearGradient id="favorites-bg" x1="8" y1="4" x2="58" y2="62" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6B8CFF"/>
+      <stop offset="1" stop-color="#3F5BF5"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="56" height="56" rx="16" fill="url(#favorites-bg)"/>
+  <path d="M32 16.5l4.59 9.3 10.27 1.49-7.43 7.24 1.75 10.23L32 39.93l-9.18 4.83 1.75-10.23-7.43-7.24 10.27-1.49L32 16.5z" fill="#FFFFFF"/>
+  <path d="M47.5 14.5l1.3 2.7 2.95.44-2.13 2.08.5 2.94-2.62-1.38-2.63 1.38.5-2.94-2.13-2.08 2.95-.44 1.31-2.7z" fill="#FFFFFF" opacity=".72"/>
+</svg>

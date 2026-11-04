@@ -1,0 +1,5 @@
+# The bundle's only Job: insert the browser plugin row. The right-sidebar tab
+# type and the favorites surface are registered entirely from the client half.
+- insert:
+    - id: favorites
+      name: '@local/dsh-plugin-favorites'
